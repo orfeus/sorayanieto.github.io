@@ -149,7 +149,7 @@ h3{
 
 
 .img-fluid{
-    width: 100vw;
+    width: 100%;
     max-width: 100%;
     display: block;
     margin: 0;
@@ -166,7 +166,7 @@ h3{
   width: 100%;
   aspect-ratio: 1 / 1;   /* ← hace el cuadro */
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .video-cuadrado iframe {
