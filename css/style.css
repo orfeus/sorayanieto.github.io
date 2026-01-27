@@ -65,6 +65,12 @@ h3{
     font-size: larger;
 }
 
+#Nosotros p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 #Noticias{
     background-color: #524612;
     color: white;
@@ -116,12 +122,13 @@ h3{
 }
 
 .container{
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: justify;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
 }
 .padded{
     padding-top: 30px;
@@ -151,7 +158,12 @@ h3{
     0 0 50px rgba(255, 120, 0, 0.6);
 }
 
-
+.full-width {
+  width: 100%;
+  max-width: 1400px;   /* mismo ancho que otras secciones */
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 .img-fluid{
     width: 100%;
@@ -166,23 +178,26 @@ h3{
  
 }
 
-.video-cuadrado {
-  position: relative;
+.video-item iframe {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* ← hace el cuadro */
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-.video-cuadrado iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 177%;   /* zoom para cubrir el cuadro */
-  height: 177%;
-  transform: translate(-50%, -50%);
+  aspect-ratio: 16 / 9;  /* formato YouTube normal */
+  border-radius: 12px;
   border: 0;
 }
+
+.video-item h3 {
+  font-size: 16px;
+  margin: 8px 0 0 0;
+  text-align: left;
+}
+
+.grid-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
 
 img, video{
     max-width: 100%;
@@ -208,14 +223,14 @@ iframe[src*="spotify"] {
 /* Tablet */
 @media (max-width: 1023px) and (min-width: 600px) {
   .youtube-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Celular */
 @media (max-width: 599px) {
   .youtube-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -313,25 +328,22 @@ iframe[src*="spotify"] {
     text-align: left;
   }
 }
-@media (min-width: 992px) {   /* solo PC */
-  #Noticias .container {
-    max-width: 1100px;
-    margin: auto;
-  }
 
-  #Noticias p {
-    text-align: justify;
-  }
-}
 #Noticias .row {
-  --bs-gutter-x: 30px;
-  --bs-gutter-y: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0;
 }
 
-#Noticias .col-12 {
-  padding-left: 15px;
-  padding-right: 15px;
+#Noticias .col,
+#Noticias .col-50 {
+  flex: none;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
 }
+
 
 #Noticias h3 {
   margin-top: 15px;
@@ -348,14 +360,9 @@ iframe[src*="spotify"] {
   }
 }
 
-/* PC */
-@media (min-width: 992px) {
-  #Noticias .container {
-    max-width: 1100px;
-    margin: auto;
-  }
-
-  #Noticias p {
-    text-align: justify;
+@media (max-width: 768px) {
+  #Noticias .row {
+    grid-template-columns: 1fr;
   }
 }
+
