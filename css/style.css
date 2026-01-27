@@ -32,6 +32,10 @@ h1{
     letter-spacing: -2px;
     margin-bottom: 0;
     text-align: right;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
 }
 h2{
     font-size: 40px;
@@ -40,7 +44,7 @@ h2{
     text-transform: none;
 }
 h3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight:700;
     text-align: left;
     padding-top: 15px;
@@ -54,7 +58,7 @@ h3{
 
 #main-header p{
     margin-bottom: 0;
-    font-size: larger;
+    font-size: 18px;
     text-align: right;
  
 }
@@ -62,7 +66,7 @@ h3{
 #Nosotros{
     background-color: #302002;
     color: white;
-    font-size: larger;
+    font-size: 18px;
 }
 
 #Nosotros p {
@@ -96,7 +100,7 @@ h3{
     background-color: var(--gris-oscuro);
     color: white;
     padding: 45px 0;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -113,7 +117,7 @@ h3{
   padding-left: 100%;
   animation: scroll-left 30s linear infinite;
   background: transparent;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @keyframes scroll-left {
@@ -140,23 +144,23 @@ h3{
     margin-left: -12px;
     margin-right: -12px;
 }
-.col{
-    flex-basis: 0;
-    flex-grow: 1;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: justify;
+
+.col-12 img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.col-12 a:hover img {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px rgba(255,170,60,0.8),
+    0 0 50px rgba(255,120,0,0.6);
+}
+
 .col-50{
     flex-basis: 50%;
     max-width: 50%;
 }
 
-.col a:hover img {
-  box-shadow:
-    0 0 15px rgba(255, 170, 60, 0.8),
-    0 0 50px rgba(255, 120, 0, 0.6);
-}
 
 .full-width {
   width: 100%;
@@ -183,6 +187,24 @@ h3{
   aspect-ratio: 16 / 9;  /* formato YouTube normal */
   border-radius: 12px;
   border: 0;
+}
+
+.video-item {
+  position: relative;
+}
+
+.video-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 5px solid rgba(255,170,60,0);
+  transition: border-color 0.3s ease;
+  pointer-events: none;
+}
+
+.video-item:hover::after {
+  border-color: rgba(255,170,60,0.8);
 }
 
 .video-item h3 {
