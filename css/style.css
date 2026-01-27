@@ -298,3 +298,64 @@ iframe[src*="spotify"] {
     padding-right: 0;
   }
 }
+/* SOLO CELULARES */
+@media (max-width: 768px) {
+  .contenedor-albums {
+    display: grid;
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 768px) {
+  #Noticias p {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {   /* solo PC */
+  #Noticias .container {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  #Noticias p {
+    text-align: justify;
+  }
+}
+#Noticias .row {
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 20px;
+}
+
+#Noticias .col-12 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#Noticias h3 {
+  margin-top: 15px;
+}
+
+#Noticias p {
+  margin-top: 10px;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  #Noticias p {
+    text-align: left;
+  }
+}
+
+/* PC */
+@media (min-width: 992px) {
+  #Noticias .container {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  #Noticias p {
+    text-align: justify;
+  }
+}
